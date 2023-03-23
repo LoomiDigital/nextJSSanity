@@ -25,17 +25,17 @@ export default function Home({ posts }: Props) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
         {posts.map(({ _id, title, slug, mainImage, description, author }) => (
           <Link href={`/post/${slug.current}`} key={_id}>
-            <div className="group">
+            <div className="group cursor-pointer border rounded-lg overflow-hidden">
               {mainImage && (
                 <img
-                  className="h-60 w-full object-cover group-hover:scale-105"
+                  className="h-60 w-full object-cover group-hover:scale-105 transition-transform ease-out"
                   src={urlFor(mainImage).url()}
                 />
               )}
               <div className="flex justify-between p-5 bg-white">
                 <div>
-                  <p>{title}</p>
-                  <p>{`${description} by ${author.name}`}</p>
+                  <p className="text-lg font-bold">{title}</p>
+                  <p className="text-xs">{`${description} by ${author.name}`}</p>
                 </div>
                 {author.image && (
                   <img
