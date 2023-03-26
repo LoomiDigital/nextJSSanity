@@ -5,7 +5,6 @@ import Header from "@d20/components/Header";
 import Banner from "@d20/components/Banner";
 import { Post } from "../../typings";
 import Link from "next/link";
-import author from "../../sanityyoutube/schemas/author";
 
 interface Props {
   posts: Post[];
