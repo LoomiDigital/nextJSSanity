@@ -8,9 +8,7 @@ export const config = {
   useCdn: process.env.NODE_ENV === "production",
 };
 
-export const createSanityClient = (config) => {
-  return createClient(config);
-};
+export const createSanityClient = (config) => createClient(config);
 
 export const sanityClient = createClient(config);
 
