@@ -3,7 +3,6 @@ import Header from "@d20/components/Header";
 import { sanityClient, urlFor } from "../../../sanity";
 import { Post } from "../../../typings";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { spawn } from "child_process";
 
 interface Props {
   post: Post;
