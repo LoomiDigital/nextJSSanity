@@ -84,6 +84,9 @@ function PostPage({ post }: Props) {
                     {children}
                   </a>
                 ),
+                normal: ({ children }: any) => (
+                  <p className="my-5 text-black-700">{children}</p>
+                ),
               }}
             />
           )}
