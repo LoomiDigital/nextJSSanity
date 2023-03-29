@@ -223,7 +223,6 @@ export const getStaticProps = async ({ params }: PageParams) => {
   const post = await sanityClient.fetch(query, { slug: params.slug });
 
   if (!post) return { notFound: true };
-  console.log("post", post);
 
   return {
     props: {
