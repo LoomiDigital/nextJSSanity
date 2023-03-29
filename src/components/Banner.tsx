@@ -11,8 +11,8 @@ function Banner() {
           is a place to read, write and connect
         </h1>
         <h2>
-          It's easy and free to post your thinking on any topic and connect with
-          millions of readers.
+          It&apos;s easy and free to post your thinking on any topic and connect
+          with millions of readers.
         </h2>
       </div>
       <img
