@@ -5,6 +5,7 @@ import Header from "@d20/components/Header";
 import Banner from "@d20/components/Banner";
 import { Post } from "../../typings";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
   posts: Post[];
@@ -26,9 +27,12 @@ export default function Home({ posts }: Props) {
           <Link href={`/post/${slug.current}`} key={_id}>
             <div className="group cursor-pointer border rounded-lg overflow-hidden">
               {mainImage && (
-                <img
+                <Image
                   className="h-60 w-full object-cover group-hover:scale-105 transition-transform ease-out"
                   src={urlFor(mainImage).url()}
+                  alt={title}
+                  width={400}
+                  height={240}
                 />
               )}
               <div className="flex justify-between p-5 bg-white">
@@ -37,10 +41,12 @@ export default function Home({ posts }: Props) {
                   <p className="text-xs">{`${description} by ${author.name}`}</p>
                 </div>
                 {author.image && (
-                  <img
+                  <Image
                     className="h-12 w-12 rounded-full"
                     src={urlFor(author.image).url()}
                     alt={author.name}
+                    width={48}
+                    height={48}
                   />
                 )}
               </div>

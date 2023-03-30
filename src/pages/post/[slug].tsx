@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import PortableText from "react-portable-text";
+import Image from "next/image";
 import Header from "@d20/components/Header";
 import { sanityClient, urlFor } from "../../../sanity";
 import { Post } from "../../../typings";
@@ -37,9 +38,12 @@ function PostPage({ post }: Props) {
     <main>
       <Header />
       {post.mainImage && (
-        <img
+        <Image
           className="w-full h-40 object-cover"
           src={urlFor(post.mainImage).url()}
+          alt={post.title}
+          width={876}
+          height={160}
         />
       )}
 
@@ -50,10 +54,12 @@ function PostPage({ post }: Props) {
         </h2>
         <div className="flex items-center space-x-2">
           {post.author.image && (
-            <img
+            <Image
               className="h-10 w-10 rounded-full"
               src={urlFor(post.author.image).url()}
-              alt=""
+              alt={post.author.name}
+              width={48}
+              height={48}
             />
           )}
 
